@@ -1,0 +1,719 @@
+<!DOCTYPE HTML><html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Details page</title>
+    <style>
+body{
+  font-family:Arial,sans-serif;
+}
+.center{
+  display: flex;
+  flex-direction:
+  align-items: center;
+  flex-wrap:wrap;
+}
+.card{
+  color:black;
+  padding:34px;
+  margin:10px;
+  text-align:center;
+  width:90%;
+box-shadow:2px 1px 6px rgba(0,0,0,0.5);
+overflow: hidden;
+      }
+.card img{
+  width:100%;
+  height:auto;
+}
+
+.card h2{
+  text-align:left;
+  color:blue;
+  font-size:33px;
+}
+.card h4{
+  text-align:left;
+  margin-top:80px;
+  font-size:32px;
+}
+.box-center{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.box{
+  background: linear-gradient(to right,rgba(61, 4, 37, 1),rgba(61, 42, 4, 1));
+  color:white;
+  border-radius:20px;
+  box-shadow:0 2px 12px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+  text-align:center;
+}
+.box:hover{
+  transform:translateY(-16px);
+  background: linear-gradient(to right,rgba(147, 132, 120, 1),rgba(6, 49, 32, 1));
+  border-radius:30px;
+}
+.box img{
+  width:470px;
+  height:auto;
+}
+.top-buttons{
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+  bottom: 0;
+}
+.buy button{
+  background:rgba(115, 97, 29, 1);
+  color:white;
+  padding:12px 45px;
+  margin:10px;
+  border:none;
+  border-radius:12px;
+  font-size:29px;
+  cursor:pointer;
+}
+.addto button {
+  background:rgba(98, 104, 128, 1);
+  color:white;
+   padding:12px 45px;
+ margin:10px;
+ border:none;
+ border-radius:12px;
+ font-size:29px;
+ cursor: pointer;
+}
+ .popup{
+      height:100%;
+      width:100%;
+      position:fixed;
+      top:0;
+      display:none;
+      justify-content: center;
+      align-items:center;
+      background:rgba(0,0,0,0.5);
+    }
+    .popup-box{
+      background:white;
+      color:blue;
+      padding:23px;
+      margin:23px;
+      width:400px;
+      height:auto;
+      text-align:center;
+      border-radius:20px;
+    }
+    .popup button{
+      background:blue;
+      color:white;
+      padding:9px 15px;
+      margin:12px;
+      border-radius:20px;
+      border:none;
+    }
+    .qty-buttons {
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      gap: 12px;
+      font-size: 34px;
+      margin-top:2vh;
+    }
+    
+  .plus button {
+      background: green;
+      color: white;
+      border: 1px solid black;
+      width: 35px;
+      height: 30px;
+      font-size: 28px;
+      
+    }
+    
+    .minus button {
+      background: red;
+      color: white;
+      width: 35px;
+      height: 30px;
+      border: 1px solid black;
+      font-size: 28px;
+    }
+    .related {
+      font-size:23px;
+    }
+    .load{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.9);
+}
+.load h2{
+  animation:blink 1s infinite;
+  color:white;
+  font-size:45px;
+}
+@keyframes blink{
+  0%{opacity:1}
+  50%{opacity:0}
+  100%{opacity:1}
+}
+  .back button{
+    background:red;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    margin:12px;
+    font-size:28px;
+    border-radius:12px;
+    transition:all 0.6s ease;
+  }
+  .back button:hover{
+    transform: translateX(-12px);
+    background:#891313;
+  }
+    @media (max-width:600px){
+    .back button{
+  background:red;
+  color: white ;
+  padding:4px 9px;
+  margin:0;
+  border:none;
+  font-size:6px;
+  border-radius:2px;
+}
+
+      .card{
+        width:90%;
+        padding:smaller;
+        border-radius:30px;
+        box-shadow:2px 5px 13px rgba(0,0,0,0.3);
+      }
+      .card:hover{
+        box-shadow:2px 1px 6px rgba(0,0,0,0.5);
+      }
+      .card h2{
+        font-size:10px;
+      }
+      .card h4{
+        font-size:10px;
+        margin-top:2px;
+      }
+      .card h1{
+        font-size:14px;
+        color:rgba(27, 29, 44, 1);
+      }
+      .card p{
+        font-size:8px;
+      }
+      .pr button{
+        padding:2px 6px;
+        width:70px;
+        right:0;
+        font-size:4px;
+        box-shadow:2px 10px 14px rgba(0,0,0,0.3);
+        height:30px;
+      }
+      .buy button{
+      width:100px;
+      font-size:14px;
+      padding:2px 8px;
+      height:6vh;
+      
+    }
+    .addto button{
+      width:100px;
+      font-size:17px;
+      padding:2px 8px;
+      height:6vh;
+      
+    } 
+    .top-buttons{
+      margin-top:3vh;
+    }
+    .plus button{
+       width:30px;
+      padding:3px;
+      height:16px;
+      font-size:8px;
+      text-align:center;
+      border-radius:2px;
+    }
+    .qty-buttons{
+      font-size:10px;
+    }
+    .minus button{
+         width:30px;
+      padding:3px;
+      height:16px;
+      font-size:8px;
+      text-align:center;
+      border-radius:2px;
+    }
+    .box{
+      width:160px;
+    }
+    .box img{
+      width:100px;
+    }
+    .box h2{
+      font-size:6px;
+      font-family:arial;
+    }
+    .box p{
+      font-size:4px;
+    }
+    .related {
+      font-size:12px;
+      margin-left:;
+    }
+  .related hr{
+      width:354px;
+    }
+    
+    }
+</style>
+  </head>
+  <body>
+  <div class="back">
+    <button onclick="Back()">←Back</button>
+  </div>
+    <div class="center"id="detailsProduct"></div>
+     <div class="related">
+        <h1>Related Products</h1>
+        <hr>
+        </div>
+    <div class="box-center"id="show-product">
+    </div>
+<div class="load"id="load"> 
+<h2>Loading.....</h2>
+</div>
+      </body>
+      <script>
+      let product=JSON.parse(localStorage.getItem("product"))||[];
+      function DetailsProducts(){
+        let showItems=document.getElementById("detailsProduct");
+        showItems.innerHTML=`
+        <div class="card">
+        <img src="${product.img}">
+        <h1>${product.name}</h1>
+        <h2><span>Price : </span>${product.price} ₹</h2>
+        <p>${product.discription}</p>
+        <h4>${product.rating}</h4>
+        <div class="qty-buttons">
+        <div class="plus"> 
+        <button onclick='increase()'>+</button>
+        </div>
+        <span>${product.qty || 1}</span>
+        <div class="minus"><button onclick='disincrease()'>-</button></div>
+        </div>
+        <hr>
+        <div class="top-buttons">
+        <div class="addto">
+        <button onclick='Addtocart(${JSON.stringify(product)})'>Add toCart</button>
+        </div>
+        <div class="buy">
+        <button onclick='Buypage(${JSON.stringify(product)})'>Buy</button>
+        </div></div>
+        </div>
+        </div>
+        `;
+      }
+      //qty-incress
+      function increase(){
+        product.qty=(product.qty || 1)+1;
+        localStorage.setItem("product",JSON.stringify(product));
+        location.reload();
+      }
+      //qty-disincrease
+      function disincrease(){
+        if(product.qty > 1){
+          product.qty --;
+        }
+        localStorage.setItem("product",JSON.stringify(product));
+        location.reload();
+        
+      }
+      //Data-relatad products 
+      let data=[
+            {
+      name:"Forest Leaf Organic T-shirt",
+      price:299,
+      discription:"fashion at its best. This 100% organic cotton T-shirt features a minimalist leaf logo, offering both eco-friendly values and superior comfort.",
+      img:"green.png",
+      category:"t-shirt",
+      rating:"3.2 ★★★"
+    },
+  {
+    name: "Csk Jersey ",
+    price: 450,
+    discription: "Unleash your inner Super King Get ready to Whistle Podu with the iconic yellow jersey of Chennai Super Kings.",
+    img: "msd-tshirt.png",
+    rating: "4.8 ★★★★☆",
+    category: "t-shirt"
+  },
+  {
+    name: "Clasical Black-Tshirt",
+    price: 399,
+    discription: "Premium cotton t-shirt with modern streetwear style and ultra comfort.",
+    img: "black.png",
+    rating: "3.2 ★★★☆☆",
+    category: "t-shirt"
+  },
+  {
+    name: "Oversized Urbar t-shirt",
+    price: 490,
+    discription: "Oversized fit t-shirt designed for trendy fashion lovers and daily comfort.",
+    rating: "2.2 ★★☆☆☆",
+    img: "modren.png",
+    category: "t-shirt"
+  },
+  {
+    name: "White Minimal Tshirt",
+    price: 560,
+    discription: "Clean minimal design with soft fabric perfect for summer outfits.",
+    rating: "3.2 ★★★☆☆",
+    category: "t-shirt",
+    img: "white.png"
+  },
+  {
+    name: "Modern Printed Tshirt",
+    price: 368,
+    rating: "4.3 ★★★★☆",
+    discription: "Stylish printed t-shirt made for casual wear and modern boys fashion.",
+    img: "gray.png",
+    category: "t-shirt"
+  },
+  {
+    name: "Sports Fit tshirt",
+    price: 999,
+    rating: "4.2 ★★★★☆",
+    discription: "Lightweight sporty t-shirt with breathable material for active lifestyle.",
+    img: "sport-fit.png",
+    category: "t-shirt"
+  },
+  {
+    name: "Vintage Brown Tshirt",
+    price: 699,
+    rating: "4.4 ★★★★☆",
+    discription: "Vintage inspired t-shirt with premium stitching and elegant street look.",
+    img: "Brown-modren.png",
+    category: "t-shirt"
+  },
+  {
+    name: "Cotton Blend T-shirt",
+    price: 599,
+    discription: "Comfortable cotton blend fabric with smooth finish and classy appearance.",
+    rating: "3.4 ★★★☆☆",
+    img: "cotton.png",
+    category: "t-shirt"
+  },
+  {
+    name: "Korean stylish t-shirt",
+    price: 289,
+    discription: "Korean fashion inspired t-shirt with modern fit and aesthetic design.",
+    rating: "2.3 ★★☆☆☆",
+    img: "korean.png",
+    category: "t-shirt"
+  },
+  {
+    name: "Girl stylish T-shirt",
+    price: 399,
+    discription: "very good t-shirt and young girl modern t-shirt",
+    rating: "3.4 ★★★☆☆",
+    img: "girl-tshirt.png",
+    category: "t-shirt"
+  },
+  {
+    name: " Clasical T-shirt  ",
+    price: 229,
+    discription: "These are very good brands of t-shirts which are made for modern boys and also give a classical look.",
+    img: "tshitsc.png",
+    rating: "4.8 ★★★★☆",
+    category: "t-shirt"
+  },
+  {
+    name: "Cotton Blend T-shirt",
+    price: 329,
+    discription: "These are very good brands of t-shirts which are made for modern boys and also give a classical look.",
+    img: "tshirtsphoto.png",
+    rating: "2.9 ★★☆☆☆",
+    category: "t-shirt"
+  },
+  {
+    name: "Modern styles T-shirt",
+    price: 399,
+    discription: "These are very good brands of t-shirts which are made for modern boys and also give a classical look,And this T-shirt is made of cotton and can be worn in summer season also.",
+    img: "shocd.png",
+    rating: "4.1 ★★★★⁠☆",
+    category: "t-shirt"
+  },
+  /*-------Shoes-----*/
+  {
+    name:"Adidas Superstar Gloss Shoes",
+    price:344,
+    discription:"Iconic black patent leather finish with the classic three-stripe design. Timeless street style.",
+    category:"shoes",
+    img:"Adidas.jpg",
+    rating:"3.4 ★★★"
+  },
+  {
+    name: "Retro Suede Trainers Shoes",
+  price: 799,
+  discription: "Dual-tone grey and cream suede finish with a low-profile gum sole. Perfect for daily wear.",
+  category: "shoes",
+  img: "club.jpg",
+  rating: "2.4 ★★"
+},
+{
+name:"Club Style High-Tops Shoes",
+    price:999,
+    discription:"Edgy black and teal high-top sneakers with silver accents. Built for bold movements.",
+    category:"shoes",
+    img:"Retro.jpg",
+    rating:"4.4 ★★★★"
+  },
+  {
+    name:"RedTape Memory Foam Shoes",
+    price:456,
+    discription:"Ultra-lightweight white mesh running shoes with teal accents. Designed for maximum comfort.",
+    category:"shoes",
+    img:"RedTape.png",
+    rating:"3.3 ★★★"
+  },
+  {
+    name: "NIKE SHOES",
+    price: 559,
+    discription: "These shoes have a very beautiful design and you can wear them even in summer. And the rating of this shoe is around 5+ and this is the best shoe of Nike till date, its price is also low.And the rating of this shoe is around 5+ and this is the best shoe of Nike till date. Its price is also low which is a very good option for low budget.",
+    img: "nikeshoes.png",
+    rating: "1.8 ★☆☆☆☆",
+    category: "shoes"
+  },
+  {
+    name: "Nike Shoes",
+    price: 499,
+    discription: "These shoes have a very beautiful design and you can wear them even in summer. And the rating of this shoe is around 5+ and this is the best shoe of Nike till date.",
+    img: "shoes22.png",
+    rating: "3.9 ★★★☆☆",
+    category: "shoes"
+  },
+  {
+    name: "Sports Shoes PUMA",
+    price: 669,
+    discription: "These shoes have a very beautiful design and you can wear them even in summer. And the rating of this shoe is around 5+ and this is the best shoe of puma till date, its price is also low.And the rating of this shoe is around 5+ and this is the best shoe of Puma till date. Its price is also low which is a very good option for low budget.",
+    img: "Puma.png",
+    rating: "4.3 ★★★★☆",
+    category: "shoes"
+  },
+  //women
+  {
+    name:"Urban Edge Cut-Out Sneakers Girls Shoes",
+    price:359,
+    discription:"Trendy black and white sneakers featuring unique side cut-outs and a chunky platform sole for a modern streetwear look.",
+    img:"Urban.jpg",
+    rating:"4.3 ★★★★",
+    category:"womens-saneakers"
+  },
+  {
+    name:"Latte Brew Comfort Trainers Girls Shoes",
+    price:489,
+    discription:"Stylish dual-tone coffee and cream sneakers with an oversized sole, designed for all-day comfort and a chic aesthetic.",
+    rating:"3.2 ★★★",
+    img:"Latte.jpg",
+    category:"womens-saneakers"
+  },
+  {
+  name:"Sporty Monochrome Runners Girls Shoes",
+    price:899,
+    discription:"Sleek black and white athletic sneakers with a dynamic panel design and high-traction soles for active lifestyles.",
+    rating:"4.6 ★★★★",
+    img:"Sporty.jpg",
+    category:"womens-saneakers"
+  },
+  /*-----Sunglasses-----*/
+  {
+    name: "Black Sunglasses",
+    price: 129,
+    discription: "These sunglasses will protect your eyes from the sun and will make you feel good and will make you look like a dashing hero, and if it is also in a very low budget then buy these sunglasses quickly.",
+    img: "sunglass22.png",
+    rating: "2.1 ★★☆☆☆",
+    category: "sunglasses"
+  },
+  {
+    name: "Blue & white Sunglasses",
+    price: 220,
+    discription: "These sunglasses will protect your eyes from the sun and will make you feel good and will make you look like a dashing hero, and if it is also in a very low budget then buy these sunglasses quickly.",
+    img: "sungampsemilanhwdx.png",
+    rating: "4.3 ★★★★☆",
+    category: "sunglasses"
+  },
+  {
+    name: "Clasical Sunglasses MODERN",
+    price: 240,
+    discription: "These sunglasses will protect your eyes from the sun and will make you feel good and will make you look like a dashing hero, and if it is also in a very low budget then buy these sunglasses quickly.",
+    img: "sunglagess3.png",
+    rating: "3.6 ★★★☆☆",
+    category: "sunglasses"
+  },
+  {
+    name: "Tortoise Shell Modern Sunglasses",
+    price: 240,
+    discription: "Upgrade your style with these trendy tortoise shell sunglasses. Designed for 100% UV protection, these lightweight frames offer a dashing look while being extremely pocket-friendly.",
+    img: "Tortoise.jpg",
+    rating: "4.2 ★★★★☆",
+    category: "sunglasses"
+},
+
+  //shirts
+  {
+    name:"Oceanic Plaid Flannel Shirt",
+    price:389,
+    discription:"Classic blue and white checkered shirt, breathable fabric, perfect for a relaxed weekend look.",
+    img:"Oceanic.jpg",
+    rating:"4.3 ★★★★",
+    category:"shirt"
+  },
+  {
+        name: "Midnight Onyx Solid Shirt",
+      price: 499,
+      discription: "Versatile slim-fit black shirt with a premium matte finish. A must-have for every wardrobe.",
+      img: "Midnight.jpg",
+      rating: "3.3 ★★★",
+      category:"shirt"
+  },
+  {
+     name:"Monochrome Grunge Check Shirt",
+    price:679,
+    discription:"Bold black and white oversized checks. Ideal for layering over a tee for a rugged style.",
+    img:"Monochrome.jpg",
+    category:"shirt",
+    rating:"2.4 ★★"
+  },
+  {
+  name:"Earthstone Textured Shirt",
+    price:979,
+    discription:"Bold black and white oversized checks. Ideal for layering over a tee for a rugged style.",
+    img:"Earthstone.jpg",
+    rating:"2.4 ★★",
+    category:"shirt"
+  },
+  //boys clothes 
+  {
+    name:"Little Prince Plaid Set Boys Clothes",
+    price:479,
+    discription:"A stylish 3-piece grey checkered waistcoat and trouser set perfect for birthday parties.",
+    img:"Little.jpg",
+    category:"Party Wear",
+    rating:"4.3 ★★★★"
+  },
+  {
+  name: "Royal Emerald Jodhpuri Boys Clothes",
+  price: 339,
+  discription: "Sophisticated dark green ethnic suit with a premium finish for a royal look.",
+  img: "Royal.jpg",
+  category: "Party Wear",
+  rating:"3.2 ★★★"
+},
+{
+    name:"Gentleman’s Brown & White Set Boys Clothes",
+    price:459,
+    discription:"Smart brown shirt paired with a white checkered waistcoat and formal pants.",
+    img:"Smart.jpg",
+    category:"Party Wear",
+    rating:"3.2 ★★★"
+  },
+  {
+    name:"Maroon Velvet Heritage Suit Boys Clothes",
+    price:679,
+    discription:"Sophisticated maroon waistcoat set with intricate patterns, perfect for weddings.",
+    img:"Maroon.jpg",
+    category:"Party Wear",
+    rating:"3.2 ★★★"
+  },
+  //girls earing
+    {
+    name: "Ruby Flare Shield earing",
+    price: 450,
+    discription: "Bold red-tinted lenses with a futuristic frame. Designed for those who want to stand out from the crowd with a unique look.",
+    img: "Redear.png",
+    rating: "4.3 ★★★★☆",
+    category: "earning"
+  },
+  {
+    name: "Stealth Black Wayfarers earing",
+    price: 220,
+    discription: "Modern all-black wayfarers with a premium matte finish. A versatile accessory that perfectly matches every outfit.",
+    img: "whitear.png",
+    rating: "4.0 ★★★★☆",
+    category: "earning"
+  }
+
+      ];
+      
+  let productsCategory=JSON.parse(localStorage.getItem("product"))||[];
+  function Relatedproducts(){
+    let related=data.filter(item => item.category === productsCategory.category && item.name !== productsCategory.name);
+    let showItems=document.getElementById("show-product");
+    showItems.innerHTML="";
+    related.forEach(item =>{
+    showItems.innerHTML+=`
+    <div class="box">
+    <img src="${item.img}">
+    <h2>${item.name}</h2>
+    <p><span>Price : </span>${item.price} ₹</p>
+    <p><span>Rating : </span>${item.rating}</p>
+    <hr>
+    <div class="top-buttons">
+    <div class="buy">
+    <button onclick='Viewdetails(${JSON.stringify(item)})'>View Details</button></div>
+    </div>
+    `;
+  });
+  }
+  //Addtocart button
+  function Addtocart(products){
+    let cart=JSON.parse(localStorage.getItem("cart"))||[];
+    let find=cart.find(item => item.name === product.name);
+    if(find){
+      find.qty=(find.qty || 1)+1;
+    }
+    else{
+      cart.push({
+    name: products.name,
+  price: products.price,
+  img: products.img,
+  discription: products.discription,
+  rating: products.rating,
+  qty: products.qty,
+  category: products.category
+      });
+    }
+    localStorage.setItem("cart",JSON.stringify(cart));
+    window.location.href="cart.html";
+  }
+  //Buy-buttons
+  function Buypage(item){
+    localStorage.setItem("item",JSON.stringify(item));
+    window.location.href="buy.html";
+  }
+  //View Details 
+  function Viewdetails(product){
+    localStorage.setItem("product",JSON.stringify(product));
+    window.location.href="details.html";
+  }
+  function Back(){
+    document.getElementById("load").style.display="flex";
+    setTimeout(function(){
+      window.location.href="index.html";
+    },3000);
+  }
+      DetailsProducts();
+      Relatedproducts();
+      </script>

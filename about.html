@@ -1,0 +1,376 @@
+<!DOCTYPE HTML><html>
+  <head>
+    <title>About page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <style>
+    body{
+      background: linear-gradient(to right, rgba(10, 21, 65, 1),rgba(65, 27, 10, 1));
+      font-family:arial,sans-serif;
+      margin:0;
+      height:100%;
+      width:100%;
+      
+    }
+    .nav{
+      background: linear-gradient(to right,rgba(202, 193, 145, 1),rgba(51, 20, 18, 1));
+      color:white;
+      padding:24px 39px;
+      width:92%;
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo img{
+      width:200px;
+      border-radius:50%;
+      border:10px solid blue;
+    }
+    .logo h1{
+      font-size:56px;
+      color:black;
+    }
+    .about{
+      display:block;
+      justify-content:center;
+      align-items:center;
+      margin-top:6vh;
+    }
+    .about h1{
+      color:white;
+      text-align:center;
+      font-size:60px;
+    }
+    .aboutme{
+      background:rgba(208, 213, 234, 0.25);
+      color:rgba(143, 151, 181, 1);
+      padding:23px 40px;
+      margin:auto;
+      width:80%;
+      height:auto;
+      font-size:28px;
+      backdrop-filter:blur(89px);
+      border-radius:23px;
+      border:1px solid black;
+      transition:all 0.6s ease;
+    }
+    .aboutme:hover{
+      transform:translateY(-12px);
+      background: linear-gradient(to right,rgba(11, 56, 72, 0.48),rgba(72, 54, 11, 0.48));
+    }
+    .skill{
+      display:block;
+      justify-content:center;
+      align-items:center;
+      margin-top:4vh;
+    }
+    .skill-section{
+      background:rgba(136, 108, 21, 0.09);
+      color:white;
+      font-size:23px;
+      padding:12px 34px;
+      width:90%;
+      backdrop-filter:blur(45px);
+      margin:auto;
+      border-radius:23px;
+      transition:all 0.3s ease;
+    }
+    .skill-section:hover{
+      transform: translateY(-1px);
+      background: linear-gradient(to right,rgba(209, 184, 122, 0.48),rgba(5, 3, 27, 0.3));
+    }
+    .skill-section h1{
+      color:silver;
+      font-family:arial,sans-serif;
+      text-align:center;
+    }
+    .journey{
+      display:block;
+      justify-content:center;
+      align-items:center;
+      margin-top:4vh;
+    }
+    .journey-section{
+      background:rgba(135, 137, 162, 0.14);
+      color:white;
+      padding:34px;
+      width:70%;
+      backdrop-filter:blur(45px);
+      margin:20px;
+      border-radius:32px;
+      box-shadow:0 2px 4px rgba(10, 21, 65, 1);
+      transition:all 0.7s ease;
+    }
+    .journey-section h1{
+      color:gold;
+    }
+    .journey-section:hover{
+      transform:translateX(12px);
+      background: linear-gradient(to right,rgba(70, 213, 59, 0.27),rgba(209, 213, 59, 0.28));
+    }
+    .bottom{
+      background:rgba(87, 86, 94, 1);
+      color:white;
+      bottom:0;
+      padding:23px 23px;
+      font-size:27px;
+      text-align:center;
+      margin-top:2vh;
+    }
+    .social-media{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:2vh;
+      gap:12px;
+    }
+    .social{
+      background: linear-gradient(to right,rgba(10, 16, 70, 0.35),rgba(27, 83, 14, 0.32));
+      color:rgba(169, 40, 40, 0.4);
+      width:500px;
+      font-size:29px;
+      margin:auto;
+      border-radius:10px;
+      padding:12px;
+    }
+    .social a{
+      color:white;
+      margin:10px;
+    }
+    i{
+      font-size:38px;
+      color:rgba(169, 40, 40, 0.91);
+    }
+    .back button{
+      background:rgba(13, 24, 88, 0.98);
+      color:white;
+      padding:18px 37px;
+      font-size:27px;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+    }
+    @media (max-width:600px){
+      .nav{
+      background: linear-gradient(to right,rgba(202, 193, 145, 1),rgba(51, 20, 18, 1));
+      color:white;
+      padding:24px 30px;
+      width:84%;
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo img{
+      width:50px;
+      border-radius:50%;
+      border:1px solid blue;
+    }
+    .logo h1{
+      font-size:12px;
+      color:black;
+    }
+    .about{
+      display:block;
+      justify-content:center;
+      align-items:center;
+      margin-top:6vh;
+    }
+    .about h1{
+      color:white;
+      text-align:center;
+      font-size:17px;
+    }
+    .aboutme{
+      background:rgba(208, 213, 234, 0.25);
+      color:rgba(143, 151, 181, 1);
+      padding:23px 40px;
+      margin:auto;
+      width:50%;
+      height:auto;
+      font-size:7px;
+      backdrop-filter:blur(89px);
+      border-radius:23px;
+      border:1px solid black;
+      transition:all 0.6s ease;
+    }
+    .aboutme:hover{
+      transform:translateY(-12px);
+      background: linear-gradient(to right,rgba(11, 56, 72, 0.48),rgba(72, 54, 11, 0.48));
+    }
+    .skill{
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      margin-top:4vh;
+    }
+    .skill-section{
+      background:rgba(136, 108, 21, 0.09);
+      color:white;
+      font-size:10px;
+      padding:12px 34px;
+      width:50%;
+      backdrop-filter:blur(45px);
+      margin:auto;
+      border-radius:23px;
+      transition:all 0.3s ease;
+    }
+    .skill-section:hover{
+      transform: translateY(-1px);
+      background: linear-gradient(to right,rgba(209, 184, 122, 0.48),rgba(5, 3, 27, 0.3));
+    }
+    .skill-section h1{
+      color:green;
+      font-family:arial,sans-serif;
+      text-align:center;
+    }
+    .journey{
+      display:block;
+      justify-content:center;
+      align-items:center;
+      margin-top:4vh;
+    }
+    .journey-section{
+      background:rgba(135, 137, 162, 0.14);
+      color:white;
+      padding:34px;
+      width:70%;
+      backdrop-filter:blur(45px);
+      margin:20px;
+      font-size:7px;
+      border-radius:3px;
+      box-shadow:0 2px 4px rgba(10, 21, 65, 1);
+      transition:all 0.7s ease;
+    }
+    .journey-section h1{
+      color:gold;
+    }
+    .journey-section:hover{
+      transform:translateX(12px);
+      background: linear-gradient(to right,rgba(70, 213, 59, 0.27),rgba(209, 213, 59, 0.28));
+    }
+    .bottom{
+      background:rgba(87, 86, 94, 1);
+      color:white;
+      bottom:0;
+      padding:2px 23px;
+      font-size:7px;
+      text-align:center;
+      margin-top:2vh;
+    }
+    .social-media{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:2vh;
+      gap:12px;
+    }
+    .social{
+      background: linear-gradient(to right,rgba(10, 16, 70, 0.35),rgba(27, 83, 14, 0.32));
+      color:rgba(169, 40, 40, 0.4);
+      width:400px;
+      font-size:9px;
+      margin:auto;
+      border-radius:10px;
+      padding:12px;
+    }
+    .social a{
+      color:white;
+      margin:10px;
+    }
+    i{
+      font-size:13px;
+      color:rgba(169, 40, 40, 0.91);
+    }
+    .back button{
+      background:rgba(13, 24, 88, 0.98);
+      color:white;
+      padding:4px 7px;
+      font-size:7px;
+      border:none;
+      border-radius:2px;
+      cursor:pointer;
+    }
+    }
+    </style>
+  </head>
+    <body>
+    <div class="nav">
+      <div class="logo">
+        <img src="rahul.jpg">
+        <h1>Rajab<span style="color:white;"> Ali</span> </h1>
+      </div>
+      <div class="back"><button onclick="Back()">Back</button></div>
+    </div>
+    <div class="journey">
+      <div class="journey-section">
+        <h1 style="font-size:70px;">My Coding Journey</h1>
+
+<h4>I started my coding journey with a simple dream — to become a real developer and build my own applications from scratch 🚀</h4>
+
+<h6>In the beginning, coding was very difficult for me. I faced many bugs, confusion, and errors, especially while learning JavaScript and responsive design. But instead of giving up, I continued practicing every single day.</h6>
+
+<h3 style="color:lightgreen;">Slowly, I started understanding how websites actually work. I learned HTML, CSS, and JavaScript by building real projects and solving real problems.</h3>
+
+<h5>Currently, I am building frontend projects like shopping apps, login systems, cart systems, responsive websites, and dynamic UI components. I enjoy debugging problems and improving my logic step by step.</h5>
+
+<h5>Every day I try to become better than yesterday, and my goal is to become a professional full-stack developer in the future 💚</h5>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="skill-section">
+        <h1>MY SKILLS</h1>
+        <li><h4>HTML 5</h4></li>
+      <li>  <h4>CSS 3</h4></li>
+      <li><h4>Java Script</h4></li>
+<h4>✔ Responsive Web Design</h4>
+<h4>✔ Mobile Friendly UI</h4>
+<h4>✔ Flexbox & Grid Layout</h4>
+<h6>✔ DOM Manipulation</h6>
+<h6>✔ localStorage</h6>
+<h6>✔ Arrays & Objects</h6>
+      </div>
+    </div>
+    <div class="about">
+      <h1>About Me</h1>
+      <div class="aboutme">
+<h4>Hello 👋
+My name is Rajab and I am a passionate beginner frontend developer from India 🇮🇳.</h4>
+
+<h3>I love creating modern and responsive websites using HTML, CSS, and JavaScript. I enjoy solving bugs, improving UI designs, and building real-world projects that help me grow as a developer.</h3>
+
+<h5>Currently, I am focused on improving my frontend development skills by building projects like shopping websites, cart systems, login systems, and responsive web applications.</h5>
+
+<h3>My goal is to become a professional full-stack developer in the future and build amazing applications for people around the world 🚀</h3>
+
+<h4>Thank you for visiting my website 💚</h4>
+      </div>
+    </div>
+    </div>
+    <div class="social-media">
+          <div class="social">
+        <i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/rajab15709?igsh=MXJ3M2VvcjlxeDRzcw==">rajab15709</a>
+       
+        <i class="fa-brands fa-facebook"></i><a href="https://www.facebook.com/share/1Y6xra8vpq/">Rahul Romeo Yt</a>
+          </div>
+    </div>
+    <div class="bottom">
+      <p>Edited By Rajab Ali</p>
+      <h6>Published on 27 May 2026</h6>
+    </div>
+    </body>
+    <script>
+      function Back(){
+        window.location.href="index.html";
+      }
+    </script>
+</html>

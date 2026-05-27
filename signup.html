@@ -1,0 +1,264 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Signup page</title>
+   <style>
+   body{
+       background:linear-gradient(to right,rgba(10, 16, 83, 1),rgba(83, 34, 10, 1));
+       margin:0;
+       font-family:arial,sans-serif;
+   }
+   
+   .container{
+       display:flex;
+       justify-content:center;
+       align-items:center;
+       height:100vh;
+   }
+   .card{
+       background:#192391;
+       color:white;
+       padding:21px 60px;
+       margin:12px;
+       border-radius:20px;
+       text-align:center;
+       font-size:20px;
+       transition:all 0.8s ease ;
+   }
+   .card:hover{
+    transform:translateX(-6px);
+background:linear-gradient(to right, rgba(176, 104, 69, 1),rgba(126, 140, 115, 1));
+   }
+  .input{
+    background:white;
+    color:black;
+    padding:9px 34px;
+    margin:12px;
+    font-size: 20px;
+    border:none;
+    text-align: center;
+    border-radius:10px;
+  }
+   .k button{
+       background:none;
+       color: black;
+       padding:0;
+       margin:0;
+       width:0;
+       border:none;
+       cursor:pointer;
+   }
+   .z button{
+       background:lightgray;
+       color:black;
+       padding:7px 68px;
+       margin:10;
+       border:none;
+       border-radius:10px;
+       transition:0.2s ease;
+       cursor:pointer;
+   }
+   .z button:hover{
+       transform:translateY(-4px) scale(1.1);
+       background:blue;
+       color:white;
+   }
+   .input-box{
+       outline:none;
+       border:none;
+       width:200px;
+   }
+   p{
+       background:white;
+       border-radius:5px;
+   }
+   @media (max-width:600px){
+       .card{
+       background:#192391;
+       color:white;
+       padding:21px 60px;
+       margin:12px;
+       border-radius:20px;
+       text-align:center;
+       font-size:20px;
+       transition:all 0.8s ease ;
+   }
+   .card:hover{
+    transform:translateX(-6px);
+background:linear-gradient(to right, rgba(176, 104, 69, 1),rgba(126, 140, 115, 1));
+   }
+  .input{
+    background:white;
+    color:black;
+    padding:7px 14px;
+    margin:2px;
+    font-size: 12px;
+    border:none;
+    text-align: center;
+    border-radius:6px;
+  }
+   .k button{
+       background:none;
+       color: black;
+       padding:0;
+       margin:0;
+       width:0;
+       border:none;
+       cursor:pointer;
+   }
+   .z button{
+       background:lightgray;
+       color:black;
+       padding:7px 12px;
+       margin:10px;
+       border:none;
+       border-radius:10px;
+       transition:0.2s ease;
+       cursor:pointer;
+   }
+   .z button:hover{
+       transform:translateY(-4px) scale(1.1);
+       background:blue;
+       color:white;
+   }
+   .input-box{
+       outline:none;
+       border:none;
+       width:150px;
+   }
+   p{
+       background:white;
+       border-radius:5px;
+   }
+   }
+   </style>
+    </head>
+   <div class="container">
+       <div class="card">
+           <div class="k">
+             <h1>SIGNUP</h1>
+             <div class="input" id="name-input">
+    <input class="input-box"type="text"placeholder="Enter Name" id="name">
+    <i class="fa-solid fa-user"></i>
+             </div>
+    <br>
+    <div class="input" id="em">
+    <input class="input-box"type="text"placeholder="Enter Email" id="email">
+    <i class="fa-solid fa-envelope"></i>
+</div> 
+    <br>
+    <div class="input" id="password-input">
+    <input class="input-box"type="password"placeholder="Enter Password" id="password">
+    <button onclick="show()"><i class="fa-solid fa-eye"></i></button></button>
+    </div>
+    <br>
+    <input type="checkbox">Remember Me<br><br>
+           </div>
+           <p id="msg"></p>
+           <div class="z">
+               <button onclick="signup ()"><i class="fa-solid fa-user-plus"> S i g n u p</i></button>
+           </div>
+       </div>
+       </div>
+       <script>
+function signup(){
+    let name=document.getElementById("name").value;
+  let email=document.getElementById("email").value;
+  let pass=document.getElementById("password").value;
+  //message box
+  let msg=document.getElementById("msg");
+  //all border-box;
+  let nam=document.getElementById("name-input");
+  let em=document.getElementById("em");
+  let pas=document.getElementById("password-input");
+  let users=JSON.parse(localStorage.getItem("users"))||[];
+  let find=users.find(u => u.email === email);
+  
+  if(email === ""|| pass === ""){
+      msg.innerHTML="Fill The All Feilds";
+      msg.style.color="red";
+    nam.style.border="2px solid red";
+    pas.style.border="2px solid red";
+    em.style.border="2px solid red";
+  }
+  else if(!email.includes("@gmail.com")){
+    msg.innerHTML="Hmm that doesn t look like a valid email address.";
+    msg.style.color="orange";
+    em.style.border="2px solid red";
+  }
+  else if(pass.length < 6){
+    msg.innerHTML="Password must be at least 6 characters long.";
+    msg.style.color="red";
+    pas.style.border="2px solid red";
+  }
+  else if(find){
+    msg.innerHTML="Account already exists with this email. Try logging in instead.";
+    msg.style.color="red";
+    em.style.border="2px solid red";
+  }
+  else{
+    msg.innerHTML="Login Successful Redirecting to Home...";
+    msg.style.color="green";
+    nam.style.border="2px solid green";
+    pas.style.border="2px solid green";
+    em.style.border="2px solid green";
+    users.push({
+        email: email,
+        pass:pass
+    });
+  localStorage.setItem("users",JSON.stringify(users));
+  window.location.href="login.html";
+}
+}
+function show(){
+    let p=document.getElementById("password");
+    if(p.type === "password"){
+        p.type="text";
+    }
+    else{
+        p.type="password";
+    }
+}
+       </script>
+       
+           
+           
+    
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+        
+            
+          
+
+
+
+
+          
+    
+
+
+          
+        
+  
+    
+            
+

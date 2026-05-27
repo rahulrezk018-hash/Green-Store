@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Order page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <style>
+body{
+     background:#f5f5f5;
+     font-family: arial,sans-serif;
+     margin: 0;
+   }
+   /*-----------navbar------*/
+  .s{
+    display:flex;
+    flex-direction:column;
+    margin-top:4vh;
+    margin-left:2cm;
+  }
+  .s img{
+    width:300px;
+  }
+  .s h1{
+    margin-left:1cm;
+  }
+  .ga{
+    display:flex;
+    background:#999;
+    color:blue;
+  }
+  .ga h1{
+    margin-left:2cm;
+  }
+  .order{
+    background:#555;
+    color:white;
+    padding:14px 27px;
+    margin-top:10vh;
+  }
+  .jk{
+    display:block;
+    justify-content:flex-start;
+    margin: 20px;
+    align-items: center;
+    width:500px;
+    color:#333;
+    padding:20px 80px;
+    background: linear-gradient(to right,rgba(134, 132, 127, 0.65),rgba(255, 219, 106, 0.41));
+    border-radius:20px;
+    box-shadow: 1px 5px 12px rgba(0,0,0,0.5);
+    transition:all 0.5s ease;
+  }
+  .jk:hover{
+    transform:translateY(-12px) scale(1.09);
+    border-radius:23px;
+  }
+  .back button {
+    padding:20px 50px;
+   margin-top:2vh;
+   color:red;
+   font-size:34px;
+   border-radius:20px;
+  }
+  @media (max-width:600px){
+      .s{
+    display:flex;
+    flex-direction:column;
+    margin-top:4vh;
+    margin-left:0;
+    font-size:8px;
+  }
+  .s img{
+    width:300px;
+    border-radius:10%;
+  }
+  .s h1{
+    margin-left:3cm;
+  }
+  .s h3{
+    margin:10px;
+  }
+  .s p{
+    margin:5px;
+  }
+  .s h5{
+    margin:10px;
+  }
+  .ga{
+    display:flex;
+    background:#999;
+    color:blue;
+    width:100%;
+  }
+  .ga h1{
+    margin-left:1cm;
+  }
+  .order{
+    background:#555;
+    color:white;
+    padding:14px 27px;
+    font-size:6px;
+  }
+  .jk{
+    display:block;
+    justify-content:flex-start;
+    align-items: center;
+    width:160px;
+    color:#333;
+    font-size:8px;
+    padding:20px 80px;
+    background: linear-gradient(to right,rgba(134, 132, 127, 0.65),rgba(255, 219, 106, 0.41));
+    border-radius:20px;
+    box-shadow: 1px 5px 12px rgba(0,0,0,0.5);
+    transition:all 0.5s ease;
+  }
+  .jk:hover{
+    transform:translateY(-12px) scale(1.09);
+    border-radius:23px;
+  }
+  .back button{
+    background:red;
+    padding:4px;
+    border:none;
+    font-size:18px;
+    color:white;
+    margin-top:1vh;
+    border-radius:10px;
+  }
+  }
+ </style>
+ </head>
+  <body>
+    <div id="item-show">
+      </div>
+  </body>
+<script>
+let item=JSON.parse(localStorage.getItem("address"))||[];
+function ShowItems(){
+  let itemShow=document.getElementById("item-show");
+  itemShow.innerHTML=`
+  <div class="ga">
+  <h1>Order Details</h1>
+  </div>
+  <div class="back">
+  <button onclick='Back()'>←Back</button>
+  </div>
+  <div class="s">
+  <img src="${item.img}">
+  <h1>${item.name}</h1>
+  <p>${item.discription}</p>
+  <h3><span>Price : </span>${item.price} ₹</h3>
+  <h5><span>Rating : </span>${item.rating}</h5>
+  </div>
+  <div class="order">
+  <h1> Address Details</h1></div>
+  <div class="jk">
+  <h2><span>Address : </span>${item.address}</h2>
+  <h4><span>Email : </span>${item.email}</h4>
+  <p><span>Mobile No : </span>${item.number}</p>
+  <p><span>Pin no : </span>${item.pin}</p>
+  </div>
+  `;
+}
+function Back(){
+  window.location.href="index.html";
+}
+ShowItems();
+</script>
+</html>
+
+
+
+        
+
+
+
+
+    
+    
+    
+    
+
+          
+    
+
+
+          
+        
+  
+    
+            
+

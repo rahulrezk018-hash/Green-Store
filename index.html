@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <title>GREEN STORE</title>
+     <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ <style>
+   body{
+     background:linear-gradient(to right ,rgba(111, 33, 33, 1),rgba(16, 44, 97, 1));
+     background-size:cover;
+    margin:0;
+    font-family:arial,sans-serif;
+    padding-bottom:170px;
+   }
+   /*-----------navbar------*/
+   .nav{
+     display:flex;
+     justify-content:space-between;
+     align-items:center;
+     padding:30px 22px;
+     top:0;
+     width:96%;
+     background:linear-gradient(to right,rgba(230, 53, 25, 0.83),rgba(17, 52, 100, 1));
+     color:white;
+   }
+   /*-------navbar h1*/
+   .nav h1{
+     color:white;
+     margin:10px;
+   }
+   .menu{
+  display:none;
+  flex-direction:column;
+  position:absolute;
+  top:0;
+  right:10px;
+  width:80%;
+  background:#09173C;
+height:19%;
+  padding:10px;
+position:fixed;
+  border-radius:12px;
+  z-index:999;
+}
+.menu1{
+  display:flex;
+  flex-direction:column;
+}
+      .menu a{
+        background:#3C1209;
+        color:white;
+        padding:3px 16px;
+        font-size:30px;
+        margin:10px;
+        width:20%;
+        border-radius:20px;
+        text-decoration:none;
+      }
+      .log-out{
+        display:flex;
+        justify-content:flex-end;
+        align-items:center;
+      }
+      .log-out button { 
+        padding:8px 25px;
+        font-size:19px;
+        cursor: pointer;
+      }
+   .blink{
+     display:block;
+     justify-content:center;
+     align-items:center;
+     gap:21px;
+     margin-left:10cm;
+   }
+  /*--------blink h2*/
+  .blink h2{
+    margin:10px;
+  }
+  /*---------- blink  h3*/
+  .blink h3{
+    margin-left:10cm;
+    animation:blink 1s infinite;
+    color:white;
+  }
+  /*------live animation*/
+  @keyframes blink{
+    100%{opacity:1;}
+    50%{opacity:0;}
+    0%{opacity:1;}
+  }
+  /*------count + products name text*/
+  /*-------search---*/
+  .search{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    gap:0;
+    background:white;
+    width:540px;
+    border-radius:20px;
+    padding:0px;
+    margin:30px;
+  }
+  .search button {
+    cursor:pointer;
+    background:none;
+    border:none;
+  font-size:30px;
+  }
+/*text +++ count*/
+  .text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:10px;
+  }
+  .text h3{
+    margin:20px;
+    color:rgba(255, 255, 255, 1);
+    font-size:23px;
+  }
+  /*-----------max-min number applay*/
+  .min-max{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap:9px;
+    margin:20px;
+  }
+  /*------hr-----*/
+  hr{
+    bottom:80vh;
+  }
+  /*-----search class----*/
+  .input{
+    color: black;
+    padding:1px 100px;
+    border:2px solid black;
+    border-radius:20px;
+    margin:20px;
+    font-size:20px;
+outline:none;
+border:none;
+  }
+  /*--------text---card*/
+  .card{
+    background:linear-gradient(to right,rgba(17, 60, 100, 1),rgba(102, 22, 13, 1),rgba(17, 60, 100, 1));
+    padding:23px;
+  }
+  /*----- min class-----*/
+  .min{
+    background-color:white;
+    color:black;
+    padding:7px 14px;
+    border:none;
+    border-radius:10px;
+    width:70px;
+  }
+  /*-------max class-----*/
+   .max{
+    background-color:white;
+    color:black;
+    padding:7px 14px;
+    border:none;
+    border-radius:10px;
+    width:70px;
+  }
+  /**----Apply Button ----*/
+  .min-max button{
+    background:blue;
+    color:white;
+    padding:6px 13px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s ease;
+  }
+  .min-max button:hover{
+    transform:translateY(-0px)scale(1.1);
+    background:green;
+  }
+  /*toggleDarkmode*/
+
+  .bottom-nav{
+    display:none;
+  }
+    .center-items{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    height:10%;
+  }
+  /*item-box +img*/
+  .box{
+    background: linear-gradient(to right,rgba(82, 66, 90, 0.38),rgba(94, 73, 39, 0.56));
+    color:white;
+    padding:12px 16px;
+     backdrop-filter:blur(33px);
+    width:400px;
+    font-size:17px;
+    border-radius:20px;
+  }
+  .box img{
+    width:100%;
+    height:auto;
+    object-fit:cover;
+  }
+  .box i{
+    color:gold;
+  }
+  /*addto-details*/
+  .add-details{
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+  }
+  .addto button{
+    background:rgba(75, 19, 15, 1);
+    color:white;
+    padding:17px 12px;
+    margin:20px;
+    border:none;
+    font-size:27px;
+    border-radius:4px;
+    cursor:pointer;
+  }
+  .details button{
+    background:rgba(15, 20, 75, 1);
+    color:white;
+    padding:17px 12px;
+    margin:2px;
+    font-size:27px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+  }
+  .me{
+    display:flex;
+    align-items:center;
+    gap:2px;
+  }
+  .me button{
+    background:none;
+    color:white;
+    font-size:59px;
+    border:none;
+    cursor:pointer;
+  }
+  /*Green-Store-name*/
+  .green h1{
+    font-size:34px;
+  }
+   .popup{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.8);
+}
+.popup h1{
+  font-size:30px;
+  text-align:center;
+}
+.popup-box{
+  background:white;
+  color:blue;
+  padding:12px 26px;
+  margin:12px;
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+  text-align:center;
+  font-size:smaller;
+  width:500px;
+  height: auto ;
+}
+.popup button{
+  background:orange;
+  color:white;
+  padding:16px 28px;
+  margin:10px;
+  font-size:19px;
+  text-align:center;
+  border:none;
+  border-radius:20px;
+}
+.user{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  font-size:16px;
+  color:#7D7F9AA3;
+}
+.user button{
+  border:none;
+  padding:17px 29px;
+  color:white;
+  font-size:40px;
+  border-radius:3px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  background: linear-gradient(to right,#7B5B5B,#044450);
+}
+  .select{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:2vh;
+  }
+  .select button{
+    background: linear-gradient(to right,rgba(64, 8, 8, 1),rgba(4, 12, 58, 1));
+    color: white ;
+    padding:5px 5px;
+    margin:10px;
+    border:none;
+    font-size:12px;
+    border-radius:2px;
+    cursor:pointer;
+    transition:all 0.6s ease;
+  }
+  
+  /*Mobile*/
+      @media (max-width:600px){
+     .nav{
+     display:flex;
+     justify-content:space-between;
+     align-items:center;
+     padding:3px 23px;
+     top:0;
+     font-size:2px;
+     width:87%;
+background:linear-gradient(to right,rgba(230, 53, 25, 0.83),rgba(17, 52, 100, 1));
+     color:white;
+   }
+   /*-------navbar h1*/
+   .nav h1{
+     color:white;
+   }
+   .blink{
+     display:block;
+     justify-content:center;
+     align-items:center;
+     gap:2px;
+     margin-left:1cm;
+   }
+  /*--------blink h2*/
+  .blink h2{
+    margin:10px;
+  }
+  /*---------- blink  h3*/
+  .blink h3{
+    margin-left:0;
+    animation:blink 1s infinite;
+    font-size:2px;
+  }
+  /*------live animation*/
+  @keyframes blink{
+    100%{opacity:1;}
+    50%{opacity:0;}
+    0%{opacity:1;}
+  }
+  /*------count + products name text*/
+  /*-------search---*/
+  .search{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    margin-top:2vh;
+    font-size:5px;
+    width:216px;
+    padding:3px;
+  }
+  .search button {
+    cursor:pointer;
+    background:none;
+    border:none;
+  font-size:4px;
+  }
+/*text +++ count*/
+  .text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:10px;
+    gap:20px;
+    color:rgba(255, 255, 255, 1);
+  }
+  .text h3{
+    margin:2px;
+    font-size:3px;
+  }
+  /*-----------max-min number applay*/
+  .min-max{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap:9px;
+    margin:2px;
+  }
+  /*------hr-----*/
+  hr{
+    bottom:80vh;
+  }
+  /*-----search class----*/
+   .input{
+    color: black;
+    padding:2px 30px;
+    border:2px solid black;
+    border-radius:2px;
+    margin:3px;
+    font-size:10px;
+outline:none;
+border:none;
+  }
+  /*--------text---card*/
+  .card{
+ background:linear-gradient(to right,rgba(17, 60, 100, 1),rgba(102, 22, 13, 1),rgba(17, 60, 100, 1));
+ padding:10px;
+ 
+  }
+  /*----- min class-----*/
+  .min{
+    background-color:white;
+    color:black;
+    padding:3px 10px;
+    border:none;
+    border-radius:10px;
+    width:40px;
+  }
+  /*-------max class-----*/
+   .max{
+    background-color:white;
+    color:black;
+    padding:3px 10px;
+    border:none;
+    border-radius:10px;
+    width:40px;
+  }
+  /**----Apply Button ----*/
+  .min-max button{
+    background:blue;
+    color:white;
+    padding:5px 10px;
+    border:none;
+    font-size:2px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s ease;
+  }
+  .min-max button:hover{
+    transform:translateY(-0px)scale(1.1) scale3d(1.6);
+    background:orange;
+  }
+
+  /*Item-center -----*/
+  .center-items{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+    height:10%;
+  }
+  /*item-box +img*/
+  .box{
+    background: linear-gradient(to right,rgba(82, 66, 90, 0.38),rgba(94, 73, 39, 0.56));
+    color:white;
+    padding:12px 16px;
+     backdrop-filter:blur(33px);
+    width:89%;
+    font-size:9px;
+    border-radius:20px;
+  }
+  .box img{
+    width:300px;
+    height:auto;
+    background:white;
+    padding:12px 14px;
+    border-radius:20px;
+  }
+  .box i{
+    color:gold;
+  }
+  /*addto-details*/
+  .add-details{
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+  }
+  .addto button{
+    background:rgba(75, 19, 15, 1);
+    color:white;
+    padding:10px 13px;
+    margin:20px;
+    width:90px;
+    border:none;
+    font-size:12px;
+    border-radius:4px;
+    cursor:pointer;
+  }
+  .details button{
+    background:rgba(15, 20, 75, 1);
+    color:white;
+    padding:10px 13px;
+    margin:20px;
+    width:100px;
+    font-size:12px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+  }
+  .select{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:2vh;
+  }
+  .select button{
+    background: linear-gradient(to right,rgba(64, 8, 8, 1),rgba(4, 12, 58, 1));
+    color: white ;
+    padding:3px 5px;
+    margin:10px;
+    border:none;
+    font-size:12px;
+    border-radius:2px;
+    cursor:pointer;
+    transition:all 0.6s ease;
+  }
+  .select button:hover{
+    transform: translateX(-12px);
+    background:rgba(192, 191, 23, 1);
+  }
+  .bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width:100%;
+    background: linear-gradient(to right,rgba(66, 4, 4, 1),rgba(7, 25, 75, 1));
+    padding:20px 0;
+  }
+  .nav-items{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    font-size:16px;
+    text-align:center;
+    cursor:pointer;
+  }
+  .nav-items span{
+    font-size:7px;
+  }
+  .nav-items a{
+    text-decoration:none;
+    color:white;
+  }
+  i{
+    font-size:20px;
+  }
+.nav-items a:hover{
+    color:blue;
+  }
+  .badge{
+    position: absolute;
+    bottom:54px;
+    left:130px;
+    background:red;
+    color:white;
+    width:10px;
+    font-size:10px;
+    padding:1px 2px;
+    border-radius:13px;
+  }
+     .menu{
+       display:;
+       font-size:7px;
+       height:30%;
+       right:0;
+       
+       
+}
+.me button{
+  font-size:22px;
+  color:white;
+}
+.menu1{
+  flex-direction:column;
+}
+  .menu a{
+        background:#3C1209;
+        color:white;
+        padding:3px 9px;
+        font-size:7px;
+        margin:4px;
+        width:70px;
+        border-radius:7px;
+        text-decoration:none;
+      }
+      .log-out{
+        display:flex;
+        justify-content:flex-end;
+        align-items:center;
+      }
+      .log-out button { 
+        padding:2px 20px;
+        font-size:8px;
+        cursor: pointer;
+      }
+     .popup{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.8);
+}
+.popup h1{
+  font-size:20px;
+  text-align:center;
+}
+.popup-box{
+  background:white;
+  color:blue;
+  padding:12px 26px;
+  margin:12px;
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+  text-align:center;
+  font-size:smaller;
+  width:300px;
+  height: auto ;
+}
+.popup button{
+  background:orange;
+  color:white;
+  padding:7px 18px;
+  margin:10px;
+  text-align:center;
+  border:none;
+  border-radius:20px;
+}
+.green h1{
+  font-size:12px;
+}
+.user button{
+  background: linear-gradient(to right,#721109F5,#150972F5);
+  color:gold;
+  padding:3px 10px;
+  font-size:14px;
+  border-radius:3px;
+}
+.user h1{
+  font-size:7px;
+  color:#D3D4E69C;
+}
+
+  }
+ </style>
+  </head>
+ <body>
+   <div class="nav">
+     <div class="menu" id="menu">
+       <div class="menu1">
+       <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+       <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> CART </a>
+       <a href="order.html"><i class="fa-solid fa-bag-shopping"></i> Order</a>
+       <a href="about.html"><i class="fa-solid fa-user"> </i> About Devloper</a>
+           <div class="log-out">
+         <button id="log-out" onclick="logout()"><i class="fa-solid fa-user"></i> Logout</button>
+         </div>
+       </div>
+     </div>
+     <div class="me">
+     <button id="btn" onclick="menu()">☰</button>
+     <div class="green">
+     <h1>GREEN STORE</h1>
+     </div>
+     </div>
+     <div class="user">
+       <h1 id="name"></h1>
+     <button id="login-but" onclick="login()">login</button>
+     </div>
+   </div>
+   <div class="search">
+     <input class="input"type="search"placeholder="Search Products"id="search"oninput="ApplyProducts()"><button onclick="ApplyProducts()"><i class="fa-solid fa-search"></i></button>
+       </div>
+         <div class="blink">
+       <h3>🔴<span>LIVE</span></h3>
+   </div>
+   <hr>
+   <div class="card">
+   <div class="text">
+     <h3>PRODUCTS<span></span></h3>
+     <div class="min-max">
+     <input class="min" type="number"placeholder="Min"id="min">
+     <input class="max" type="number"placeholder="Max"id="max">
+     <button onclick="ApplyProducts()">Apply</button>
+   </div>
+   </div>
+   </div>
+   <hr>
+   <div class="select">
+   <select id="sort">
+     <option value="">Sort</option>
+     <option value="low">Low to High</option>
+     <option value="high">High to Low</option> 
+   </select>
+   <button onclick="ApplyProducts()">Apply</button>
+   </div>
+   <div class="center-items"id="show-items"></div>
+   <div class="bottom-nav">
+     <div class="nav-items">
+    <a href="index.html"><i class="fa-solid fa-house"></i></a>
+         <a href="index.html"> <span>Home</span></a>
+        </div>
+        <div class="nav-items">
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <div class="badge">
+          <span id="badge">1</span>
+        </div>
+        <a href="Cart.html"><span>Cart</span></a>
+      </div>
+      <div class="nav-items">
+<a href="order.html"> <i class="fa-solid fa-bag-shopping"></i></a>
+ <a href="order.html"> <span>Order</span></a>
+</div>
+<div class="nav-items">
+  <a href="about.html"><i class="fa-solid fa-user"></i></a>
+ <a href="about.html"> <span>About Devloper</span></a>
+</div>
+   </div>
+   <div class="popup" id="popup">
+     <div class="popup-box">
+       <h1>Product Has been Added ✅</h1>
+       <button onclick="closePopup()">OK</button>
+     </div>
+   </div>
+ </body>
+  <script>
+  function loginpage(){
+    let username=localStorage.getItem("username");
+    let user=localStorage.getItem("login");
+    let loginButton=document.getElementById("login-but");
+    let logoutB=document.getElementById("log-out");
+    let name=document.getElementById("name");
+    if(user === "true"){
+    logoutB.style.display="flex";
+    loginButton.style.display="none";
+    name.innerHTML=username;
+  }
+  else{
+    logoutB.style.display="none";
+    loginButton.style.display="flex";
+    name.innerHTML="";
+  }
+  }
+  loginpage();
+  //popup
+  function ShowPopup(){
+    let popup=document.getElementById("popup");
+    popup.style.display="block";
+    setTimeout(function(){
+      popup.style.display="none";
+    },3000);
+  }
+  function ClosePopup(){
+    document.getElementById("popup").style.display="none";
+  }
+  //badges 
+  function badge(){
+    let cart=JSON.parse(localStorage.getItem("cart"))||[];
+    document.getElementById("badge").innerText=cart.length;
+  }
+  //toggle dark mode//
+window.addEventListener("DOMContentLoaded",function(){
+  let menu=document.getElementById("menu");
+  menu.style.display="none";
+});
+function menu() {
+     let user = localStorage.getItem("login");
+   if (user !== "true") {
+     alert("⚠️ Access Restricted please login to continue You need to sign in before accessing this feature like add to cart, View Details, or menu options.Login first to enjoy the full Green Store experience");
+     window.location.href = "login.html";
+     return;
+   }
+  let menu = document.getElementById("menu");
+  let btn = document.getElementById("btn");
+if(menu.style.display==="none"){
+  menu.style.display="block";
+  btn.innerHTML="×";
+}
+else{
+  menu.style.display="none";
+  btn.innerHTML= "☰";
+}
+}
+//login button
+function login(){
+  window.location.href="login.html";
+}
+//logout
+function logout(){
+  localStorage.removeItem("username");
+  localStorage.removeItem("login");
+  location.reload();
+}
+  //----Popup--//
+  
+  function showPopup(){
+    document.getElementById("popup").style.display="flex";
+  }
+  function closePopup(){
+    document.getElementById("popup").style.display="none";
+  }
+  /*-----deta-----*/
+  const product = [
+    {
+      name:"Forest Leaf Organic T-shirt",
+      price:299,
+      discription:"fashion at its best. This 100% organic cotton T-shirt features a minimalist leaf logo, offering both eco-friendly values and superior comfort.",
+      img:"green.png",
+      category:"t-shirt",
+      rating:"3.2 ★★★☆☆"
+    },
+  {
+    name: "Csk Jersey ",
+    price: 450,
+    discription: "Unleash your inner Super King Get ready to Whistle Podu with the iconic yellow jersey of Chennai Super Kings.",
+    img: "msd-tshirt.png",
+    rating: "4.8 ★★★★☆",
+    category: "t-shirt"
+  },
+  {
+    name: "Clasical Black-Tshirt",
+    price: 399,
+    discription: "Premium cotton t-shirt with modern streetwear style and ultra comfort.",
+    img: "black.png",
+    rating: "3.2 ★★★☆☆",
+    category: "t-shirt"
+  },
+  {
+    name: "Oversized Urbar t-shirt",
+    price: 490,
+    discription: "Oversized fit t-shirt designed for trendy fashion lovers and daily comfort.",
+    rating: "2.2 ★★☆☆☆",
+    img: "modren.png",
+    category: "t-shirt"
+  },
+  {
+    name: "White Minimal Tshirt",
+    price: 560,
+    discription: "Clean minimal design with soft fabric perfect for summer outfits.",
+    rating: "3.2 ★★★☆☆",
+    category: "t-shirt",
+    img: "white.png"
+  },
+  {
+    name: "Modern Printed Tshirt",
+    price: 368,
+    rating: "4.3 ★★★★☆",
+    discription: "Stylish printed t-shirt made for casual wear and modern boys fashion.",
+    img: "gray.png",
+    category: "t-shirt"
+  },
+  {
+    name: "Sports Fit tshirt",
+    price: 999,
+    rating: "4.2 ★★★★☆",
+    discription: "Lightweight sporty t-shirt with breathable material for active lifestyle.",
+    img: "sport-fit.png",
+    category: "t-shirt"
+  },
+  {
+    name: "Vintage Brown Tshirt",
+    price: 699,
+    rating: "4.4 ★★★★☆",
+    discription: "Vintage inspired t-shirt with premium stitching and elegant street look.",
+    img: "Brown-modren.png",
+    category: "t-shirt"
+  },
+  {
+    name: "Cotton Blend T-shirt",
+    price: 599,
+    discription: "Comfortable cotton blend fabric with smooth finish and classy appearance.",
+    rating: "3.4 ★★★☆☆",
+    img: "cotton.png",
+    category: "t-shirt"
+  },
+  {
+    name: "Korean stylish t-shirt",
+    price: 289,
+    discription: "Korean fashion inspired t-shirt with modern fit and aesthetic design.",
+    rating: "2.3 ★★☆☆☆",
+    img: "korean.png",
+    category: "t-shirt"
+  },
+  {
+    name: "Girl stylish T-shirt",
+    price: 399,
+    discription: "very good t-shirt and young girl modern t-shirt",
+    rating: "3.4 ★★★☆☆",
+    img: "girl-tshirt.png",
+    category: "t-shirt"
+  },
+  {
+    name: " Clasical T-shirt  ",
+    price: 229,
+    discription: "These are very good brands of t-shirts which are made for modern boys and also give a classical look.",
+    img: "tshitsc.png",
+    rating: "4.8 ★★★★☆",
+    category: "t-shirt"
+  },
+  {
+    name: "Cotton Blend T-shirt",
+    price: 329,
+    discription: "These are very good brands of t-shirts which are made for modern boys and also give a classical look.",
+    img: "tshirtsphoto.png",
+    rating: "2.9 ★★☆☆☆",
+    category: "t-shirt"
+  },
+  {
+    name: "Modern styles T-shirt",
+    price: 399,
+    discription: "These are very good brands of t-shirts which are made for modern boys and also give a classical look,And this T-shirt is made of cotton and can be worn in summer season also.",
+    img: "shocd.png",
+    rating: "4.1 ★★★★⁠☆",
+    category: "t-shirt"
+  },
+  /*-------Shoes-----*/
+  {
+    name:"Adidas Superstar Gloss Shoes",
+    price:344,
+    discription:"Iconic black patent leather finish with the classic three-stripe design. Timeless street style.",
+    category:"shoes",
+    img:"Adidas.jpg",
+    rating:"3.4 ★★★☆☆"
+  },
+  {
+    name: "Retro Suede Trainers Shoes",
+  price: 799,
+  discription: "Dual-tone grey and cream suede finish with a low-profile gum sole. Perfect for daily wear.",
+  category: "shoes",
+  img: "club.jpg",
+  rating: "2.4 ★★☆☆☆"
+},
+{
+name:"Club Style High-Tops Shoes",
+    price:999,
+    discription:"Edgy black and teal high-top sneakers with silver accents. Built for bold movements.",
+    category:"shoes",
+    img:"Retro.jpg",
+    rating:"4.4 ★★★★☆"
+  },
+  {
+    name:"RedTape Memory Foam Shoes",
+    price:456,
+    discription:"Ultra-lightweight white mesh running shoes with teal accents. Designed for maximum comfort.",
+    category:"shoes",
+    img:"RedTape.png",
+    rating:"3.3 ★★★☆☆"
+  },
+  {
+    name: "NIKE SHOES",
+    price: 559,
+    discription: "These shoes have a very beautiful design and you can wear them even in summer. And the rating of this shoe is around 5+ and this is the best shoe of Nike till date, its price is also low.And the rating of this shoe is around 5+ and this is the best shoe of Nike till date. Its price is also low which is a very good option for low budget.",
+    img: "nikeshoes.png",
+    rating: "1.8 ★☆☆☆☆",
+    category: "shoes"
+  },
+  {
+    name: "Nike Shoes",
+    price: 499,
+    discription: "These shoes have a very beautiful design and you can wear them even in summer. And the rating of this shoe is around 5+ and this is the best shoe of Nike till date.",
+    img: "shoes22.png",
+    rating: "3.9 ★★★☆☆",
+    category: "shoes"
+  },
+  {
+    name: "Sports Shoes PUMA",
+    price: 669,
+    discription: "These shoes have a very beautiful design and you can wear them even in summer. And the rating of this shoe is around 5+ and this is the best shoe of puma till date, its price is also low.And the rating of this shoe is around 5+ and this is the best shoe of Puma till date. Its price is also low which is a very good option for low budget.",
+    img: "Puma.png",
+    rating: "4.3 ★★★★☆",
+    category: "shoes"
+  },
+  //women
+  {
+    name:"Urban Edge Cut-Out Sneakers Girls Shoes",
+    price:359,
+    discription:"Trendy black and white sneakers featuring unique side cut-outs and a chunky platform sole for a modern streetwear look.",
+    img:"Urban.jpg",
+    rating:"4.3 ★★★★☆",
+    category:"womens-saneakers"
+  },
+  {
+    name:"Latte Brew Comfort Trainers Girls Shoes",
+    price:489,
+    discription:"Stylish dual-tone coffee and cream sneakers with an oversized sole, designed for all-day comfort and a chic aesthetic.",
+    rating:"3.2 ★★★☆☆",
+    img:"Latte.jpg",
+    category:"womens-saneakers"
+  },
+  {
+  name:"Sporty Monochrome Runners Girls Shoes",
+    price:899,
+    discription:"Sleek black and white athletic sneakers with a dynamic panel design and high-traction soles for active lifestyles.",
+    rating:"4.6 ★★★★☆",
+    img:"Sporty.jpg",
+    category:"womens-saneakers"
+  },
+  /*-----Sunglasses-----*/
+  {
+    name: "Black Sunglasses",
+    price: 129,
+    discription: "These sunglasses will protect your eyes from the sun and will make you feel good and will make you look like a dashing hero, and if it is also in a very low budget then buy these sunglasses quickly.",
+    img: "sunglass22.png",
+    rating: "2.1 ★★☆☆☆",
+    category: "sunglasses"
+  },
+  {
+    name: "Blue & white Sunglasses",
+    price: 220,
+    discription: "These sunglasses will protect your eyes from the sun and will make you feel good and will make you look like a dashing hero, and if it is also in a very low budget then buy these sunglasses quickly.",
+    img: "sungampsemilanhwdx.png",
+    rating: "4.3 ★★★★☆",
+    category: "sunglasses"
+  },
+  {
+    name: "Clasical Sunglasses MODERN",
+    price: 240,
+    discription: "These sunglasses will protect your eyes from the sun and will make you feel good and will make you look like a dashing hero, and if it is also in a very low budget then buy these sunglasses quickly.",
+    img: "sunglagess3.png",
+    rating: "3.6 ★★★☆☆",
+    category: "sunglasses"
+  },
+  {
+    name: "Tortoise Shell Modern Sunglasses",
+    price: 240,
+    discription: "Upgrade your style with these trendy tortoise shell sunglasses. Designed for 100% UV protection, these lightweight frames offer a dashing look while being extremely pocket-friendly.",
+    img: "Tortoise.jpg",
+    rating: "4.2 ★★★★☆",
+    category: "sunglasses"
+},
+
+  //shirts
+  {
+    name:"Oceanic Plaid Flannel Shirt",
+    price:389,
+    discription:"Classic blue and white checkered shirt, breathable fabric, perfect for a relaxed weekend look.",
+    img:"Oceanic.jpg",
+    rating:"4.3 ★★★★☆",
+    category:"shirt"
+  },
+  {
+        name: "Midnight Onyx Solid Shirt",
+      price: 499,
+      discription: "Versatile slim-fit black shirt with a premium matte finish. A must-have for every wardrobe.",
+      img: "Midnight.jpg",
+      rating: "3.3 ★★★☆☆",
+      category:"shirt"
+  },
+  {
+     name:"Monochrome Grunge Check Shirt",
+    price:679,
+    discription:"Bold black and white oversized checks. Ideal for layering over a tee for a rugged style.",
+    img:"Monochrome.jpg",
+    category:"shirt",
+    rating:"2.4 ★★☆☆☆"
+  },
+  {
+  name:"Earthstone Textured Shirt",
+    price:979,
+    discription:"Bold black and white oversized checks. Ideal for layering over a tee for a rugged style.",
+    img:"Earthstone.jpg",
+    rating:"2.4 ★★☆☆☆",
+    category:"shirt"
+  },
+  //boys clothes 
+  {
+    name:"Little Prince Plaid Set Boys Clothes",
+    price:479,
+    discription:"A stylish 3-piece grey checkered waistcoat and trouser set perfect for birthday parties.",
+    img:"Little.jpg",
+    category:"Party Wear",
+    rating:"4.3 ★★★★☆"
+  },
+  {
+  name: "Royal Emerald Jodhpuri Boys Clothes",
+  price: 339,
+  discription: "Sophisticated dark green ethnic suit with a premium finish for a royal look.",
+  img: "Royal.jpg",
+  category: "Party Wear",
+  rating:"3.2 ★★★☆☆"
+},
+{
+    name:"Gentleman’s Brown & White Set Boys Clothes",
+    price:459,
+    discription:"Smart brown shirt paired with a white checkered waistcoat and formal pants.",
+    img:"Smart.jpg",
+    category:"Party Wear",
+    rating:"3.2 ★★★☆☆"
+  },
+  {
+    name:"Maroon Velvet Heritage Suit Boys clothes",
+    price:679,
+    discription:"Sophisticated maroon waistcoat set with intricate patterns, perfect for weddings.",
+    img:"Maroon.jpg",
+    category:"Party Wear",
+    rating:"3.2 ★★★☆☆"
+  },
+  //girls earing
+    {
+    name: "Ruby Flare Shield earing",
+    price: 450,
+    discription: "Bold red-tinted lenses with a futuristic frame. Designed for those who want to stand out from the crowd with a unique look.",
+    img: "Redear.png",
+    rating: "4.3 ★★★★☆",
+    category: "earning"
+  },
+  {
+    name: "Stealth Black Wayfarers earing",
+    price: 220,
+    discription: "Modern all-black wayfarers with a premium matte finish. A versatile accessory that perfectly matches every outfit.",
+    img: "whitear.png",
+    rating: "4.0 ★★★★☆",
+    category: "earning"
+  }
+];
+//------SHOW--ITEMS-----//
+ function ShowData(data){
+   let showProducts=document.getElementById("show-items");
+   showProducts.innerHTML="";
+   data.forEach((item,index) =>{
+     showProducts.innerHTML+=`
+     <div class="box">
+     <img src="${item.img}">
+     <h2>${item.name}</h2>
+     <h3>${item.price} ₹</h3>
+     <p>${item.discription}</p>
+     <p><i class="fa-solid fa-star"> ${item.rating}</i></p>
+     <hr>
+     <div class="add-details" >
+     <div class="addto">
+     <button onclick='Addto(${JSON.stringify(item)})'>Add to Cart</button>
+     </div>
+     <div class="details">
+     <button onclick='Detailspage(${JSON.stringify(item)})'>View Details</button>
+     </div>
+     </div>
+     </div>
+     `;
+   });
+   if(data.length === 0){
+     showProducts.innerHTML="<h3 style='color:white'>No Products</h3>"
+   }
+ }
+ //Filter+Sort//
+ function ApplyProducts(){
+   //search-input//
+   let search=document.getElementById("search").value.toLowerCase();
+   //min-input
+   let min=Number(document.getElementById("min").value)||0;
+   //max-input
+   let max=Number(document.getElementById("max").value)||Infinity;
+   //sort-input
+   let sort=document.getElementById("sort").value;
+   //filtered-product
+   let filtered=product.filter(item => item.name.toLowerCase().includes(search) && item.price >= min && item.price <= max);
+   //sort-product
+   let data=filtered;
+   if(sort === "low"){
+     data=[...filtered].sort((a,b)=>
+     a.price - b.price);
+   }
+   else if(sort === "high"){
+     data=[...filtered].sort((a,b)=>
+     b.price - a.price);
+   }
+   ShowData(data);
+ }
+ function Addto(products){
+   let user=localStorage.getItem("login");
+   if(user !== "true"){
+          alert("⚠️ Access Restricted please login to continue You need to sign in before accessing this feature like add to cart, View Details, or menu options.Login first to enjoy the full Green Store experience");
+     window.location.href="login.html";
+     return;
+   }
+   let cart=JSON.parse(localStorage.getItem("cart"))||[];
+   let find=cart.find(item => item.name === products.name);
+   if(find){
+     find.qty=(find.qty || 1)+1;
+   }
+   else{
+     cart.push({
+       name:products.name,
+       price:products.price,
+       img:products.img,
+       discription:products.discription,
+       rating:products.rating,
+       qty:products.qty
+     });
+   }
+   localStorage.setItem("cart",JSON.stringify(cart));
+badge();
+showPopup();
+ }
+ //Details-page
+ function Detailspage(product){
+      let user=localStorage.getItem("login");
+   if(user !== "true"){
+  alert("⚠️ Access Restricted please login to continue You need to sign in before accessing this feature like add to cart, View Details, or menu options.Login first to enjoy the full Green Store experience");
+     window.location.href="login.html";
+     return;
+   }
+   localStorage.setItem("product",JSON.stringify({
+     name: product.name,
+     price: product.price,
+     img:product.img,
+       discription:product.discription,
+       rating:product.rating,
+       qty:product.qty,
+       category: product.category
+   }));
+   window.location.href="details.html";
+ }
+ ShowData(product);
+ badge();
+  </script>
+</html>
+        
+
+
+
+
+    
+    
+    
+    
+
+          
+    
+
+
+          
+        
+  
+    
+            
+
